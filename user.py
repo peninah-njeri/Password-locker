@@ -20,5 +20,20 @@ class User:
                 return None
 
 
+    @classmethod
+    def validate_user(cls, user, password):
+        """
+        Takes in a user and a password and verifies that the password provided is equal to the users password
+        :param user:
+        :param password:
+        :return: boolean
+        """
+        if user.password == password:
+            return True
+        else:
+            return False
+            
+
+
 
      
