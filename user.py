@@ -6,6 +6,10 @@ class User:
         self.last_name = last_name
         self.password = password
 
+    @classmethod
+    def save_user(cls, user):
+        cls.users_list.append(user)    
+
 
 
 
