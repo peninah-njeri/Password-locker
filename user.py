@@ -8,10 +8,16 @@ class User:
 
     @classmethod
     def save_user(cls, user):
-        cls.users_list.append(user)    
+        cls.users_list.append(user)
 
-
-
+    
+    @classmethod
+    def find_user(cls, username):
+        for user in cls.users_list:
+            if user.first_name == username:
+                return user
+            else:
+                return None
 
 
 
