@@ -17,8 +17,14 @@ class TestCredentials(unittest.TestCase):
         User.users_list.clear()
         Credentials.credentials_list.clear()
 
-     def test_add_credentials(self):
+    def test_add_credentials(self):
         new_credential = Credentials('skype', 'smile', '9999')
         self.assertEqual(new_credential.account, 'skype')
         self.assertEqual(new_credential.username, 'smile')
         self.assertEqual(new_credential.password, '9999')
+
+    def test_save_credentials(self):
+        Credentials.save_credential(self.test_credential)
+        has_credential = self.test_credential in Credentials.credentials_list
+        self.assertTrue(has_credential)             
+
