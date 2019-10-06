@@ -15,4 +15,13 @@ class Credentials:
     @classmethod
     def save_credential(cls, credential):
         cls.credentials_list.append(credential)
-        
+
+
+    @classmethod
+    def find_credential(cls, platform):
+        for credential in cls.credentials_list:
+            if credential.account == account:
+                return credential
+            else:
+                return None
+    

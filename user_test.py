@@ -14,7 +14,7 @@ class TestUser(unittest.TestCase):
 
     def tearDown(self):
         """
-        cleans up after each test, removes dummy user and credential
+        cleans up after each test, removes fake user
         :return:
         """
         User.users_list.clear()    

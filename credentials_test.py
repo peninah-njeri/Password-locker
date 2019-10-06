@@ -26,5 +26,7 @@ class TestCredentials(unittest.TestCase):
     def test_save_credentials(self):
         Credentials.save_credential(self.test_credential)
         has_credential = self.test_credential in Credentials.credentials_list
-        self.assertTrue(has_credential)             
-
+        self.assertTrue(has_credential)        
+     def test_find_credential(self):
+        credential = Credentials.find_credential(self.test_credential.account)
+        self.assertEqual(credential, self.test_credential)        
