@@ -1,8 +1,9 @@
 import unittest
-from user import user
+from user import User
 
 
-class TestUserCredentials(unittest.TestCase):
+
+class TestUser(unittest.TestCase):
 
     def setUp(self):
         """
@@ -10,6 +11,13 @@ class TestUserCredentials(unittest.TestCase):
         """
         self.test_user = User('ninah', 'njeri', '123')
         User.users_list.append(self.test_user)
+
+    def tearDown(self):
+        """
+        cleans up after each test, removes dummy user and credential
+        :return:
+        """
+        User.users_list.clear()    
 
       
     def test_create_user(self):
