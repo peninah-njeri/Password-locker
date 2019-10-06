@@ -30,3 +30,11 @@ class Credentials:
     @classmethod
     def get_all_credentials(cls):
         return cls.credentials_list
+    
+    @staticmethod
+    def generate_random_password(password_length=6):
+        """
+        Create a random passwor in both lowercase and uppercase letters
+        """
+        letters = string.ascii_letters
+        return ''.join(random.choice(letters) for i in range(password_length))
