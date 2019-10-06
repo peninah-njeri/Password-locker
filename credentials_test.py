@@ -30,3 +30,7 @@ class TestCredentials(unittest.TestCase):
      def test_find_credential(self):
         credential = Credentials.find_credential(self.test_credential.account)
         self.assertEqual(credential, self.test_credential)        
+
+    def test_get_all_credentials(self):
+        credentials = Credentials.get_all_credentials()
+        self.assertEqual(Credentials.credentials_list, credentials)

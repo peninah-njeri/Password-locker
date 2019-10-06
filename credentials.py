@@ -1,3 +1,5 @@
+import random
+import string
 
 
 class Credentials:
@@ -25,3 +27,6 @@ class Credentials:
             else:
                 return None
     
+    @classmethod
+    def get_all_credentials(cls):
+        return cls.credentials_list
