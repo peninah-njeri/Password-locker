@@ -26,3 +26,10 @@ class TestUserCredentials(unittest.TestCase):
     def test_find_user(self):
         user = User.find_user(self.test_user.first_name)
         self.assertEqual(user, self.test_user)
+
+    def test_validate_user(self):
+        is_valid = User.validate_user(self.test_user, self.test_user.password)
+        self.assertTrue(is_valid)
+    
+
+        
