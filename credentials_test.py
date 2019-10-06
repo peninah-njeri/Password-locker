@@ -34,3 +34,16 @@ class TestCredentials(unittest.TestCase):
     def test_get_all_credentials(self):
         credentials = Credentials.get_all_credentials()
         self.assertEqual(Credentials.credentials_list, credentials)
+
+    def test_random_password_generator(self):
+        password = Credentials.generate_random_password()
+        self.assertTrue(len(password) ==6)
+
+    def test_delete_credential(self):
+        Credentials.delete_credential('boxxy')
+        is_deleted = self.test_credential not in Credentials.credentials_list
+        print(Credentials.credentials_list)
+        self.assertTrue(is_deleted)
+
+if __name__ == '__main__':
+    unittest.main()
