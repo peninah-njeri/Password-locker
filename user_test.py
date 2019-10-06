@@ -7,7 +7,7 @@ class TestUser(unittest.TestCase):
 
     def setUp(self):
         """
-        Set a fake user and credential for each test
+        Sets a fake user for each test
         """
         self.test_user = User('ninah', 'njeri', '123')
         User.users_list.append(self.test_user)
