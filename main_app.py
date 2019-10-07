@@ -16,7 +16,7 @@ def login(username, password):
     if user is None:
         return False, None
     else:
-        is_valid = User.authenticate_user(user, password)
+        is_valid = User.validate_user(user, password)
         return is_valid, user
 
 
@@ -80,36 +80,36 @@ Use the following commands to navigate:
                 while is_valid:
                     
                     print("""
-            ---------------------------------------------------------------------------------
+            
                                     use the following commands to navigate:
               dc - display credentials, cc - create credentials, del - delete a credential, exit - logOut
-            ----------------------------------------------------------------------------------            
+                     
                     """)
                     command = input('>> ').strip()
                     if command == 'dc':
                         credentials = get_all_credentials()
                         if len(credentials) > 0:
                             for credential in credentials:
-                                print(f"platform: {credential.platform} ** username: {credential.username} ** password: {credential.password}")
+                                print(f"account: {credential.account} ** username: {credential.username} ** password: {credential.password}")
                         else:
                             print("""
                             
-                            You seem to have no saved passwords at the moment
+                             no saved passwords at the moment
                             
                             """)
                     elif command == 'cc':
-                        platform = input('Platform eg.facebook, twitter, dropbox >> ')
+                        platform = input('account eg.facebook, twitter, dropbox >> ')
                         username = input('username >> ')
                         is_generated = input("Do you want a system generated password?(y/n) >> ")
                         if is_generated == 'y':
                             password = Credentials.generate_random_password()
                         else:
                             password = input('Password >> ')
-                        create_credential(platform, username, password)
-                        print(f"{platform} credentials successfully saved")
+                        create_credential(account, username, password)
+                        print(f"{account} credentials successfully saved")
                     elif command == 'del':
-                        print('Enter the name of the platform you want to delete')
-                        name = input('platform >> ').strip()
+                        print('Enter the name of the account you want to delete')
+                        name = input('account >> ').strip()
                         confirm = input(f"Are you sure you want to delete {name}?(y/n) >> ").strip()
                         if confirm == 'y':
                             is_deleted = delete_credential(name)
@@ -120,18 +120,18 @@ Use the following commands to navigate:
                     elif command == 'exit':
                         break
                     else:
-                        print("Sorry i don't understand that command")
+                        print("Sorry not found")
             else:
                 print("""
-                ---------------------------------------
+            
                 Invalid username or password, try again
-                ---------------------------------------
+            
                 """)
 
         elif command == 'ex':
             break
         else:
-            print("Sorry i don't understand that command")
+            print("Sorry not found")
 
 
 if __name__ == '__main__':
