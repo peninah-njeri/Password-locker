@@ -49,7 +49,6 @@ Use the following commands to navigate:
     ca - Create Account 
     li - Log In(Already have an account)
     ex - Exit
------------------------------------------------------------------------
     """)
     while True:
         print("""
@@ -79,7 +78,7 @@ Use the following commands to navigate:
                                         Welcome {user.first_name.title()}
                 """)
                 while is_valid:
-                    # print("type help to display a list of commands \n")
+                    
                     print("""
             ---------------------------------------------------------------------------------
                                     use the following commands to navigate:
