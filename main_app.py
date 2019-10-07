@@ -43,9 +43,9 @@ def main():
     print("""
     
                         Welcome to password locker!             
-New? Create an account to get started!
+If new, create an account to get
 
-Use the following commands to navigate:
+For easy navigation, using the commands provided:
     ca - Create Account 
     li - Log In(Already have an account)
     ex - Exit
@@ -56,7 +56,7 @@ Use the following commands to navigate:
         Waiting for your input....
         
         """)
-        command = input('>> ').strip()
+        command = input('>> ')
         if command == 'ca':
             first_name = input('First name >> ')
             last_name = input('Last name >> ')
@@ -98,7 +98,7 @@ Use the following commands to navigate:
                             
                             """)
                     elif command == 'cc':
-                        platform = input('account eg.facebook, twitter, dropbox >> ')
+                        account = input('account eg.facebook, twitter, instagram >> ')
                         username = input('username >> ')
                         is_generated = input("Do you want a system generated password?(y/n) >> ")
                         if is_generated == 'y':

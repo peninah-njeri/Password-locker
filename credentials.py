@@ -6,11 +6,11 @@ class Credentials:
     """
     This class is for creating,searching, deleting user credentials and generating passwords 
     """  
-     credentials_list = []
+    credentials_list = []
 
     
     def __init__(self, account, username, password):
-        self.account = acccount
+        self.account = account
         self.username = username
         self.password = password
 
@@ -20,7 +20,7 @@ class Credentials:
 
 
     @classmethod
-    def find_credential(cls, platform):
+    def find_credential(cls, account):
         for credential in cls.credentials_list:
             if credential.account == account:
                 return credential
@@ -34,7 +34,7 @@ class Credentials:
     @staticmethod
     def generate_random_password(password_length=6):
         """
-        Create a random passwor in both lowercase and uppercase letters
+        Create a random password in both lowercase and uppercase letters
         """
         letters = string.ascii_letters
         return ''.join(random.choice(letters) for i in range(password_length))
